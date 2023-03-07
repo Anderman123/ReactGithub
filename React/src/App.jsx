@@ -1,6 +1,13 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import Saludo from './components/pure/saludo'
+import SaludoF from './components/pure/saludoF'
+import TaskListComponent from './components/container/task_list'
+import Ejemplo1 from './hooks/Ejemplo1'
+import Ejemplo2 from './hooks/Ejemplo2'
+import MiComponenteConContexto from './hooks/Ejemplo3'
+import Ejemplo4 from './hooks/Ejemplo4'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,25 +15,24 @@ function App() {
   return (
     <div className="App">
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {/* <Saludo name="Alexander"></Saludo> */}
+        {/* <SaludoF name="Alexander"></SaludoF> */}
+        
+        {/* Componente  de listado de tareas */}
+        {/* <TaskListComponent></TaskListComponent> */}
+
+        {/* Ejemplo de uso de HOOKS */}
+        {/* <Ejemplo1></Ejemplo1> */}
+        {/* <Ejemplo2></Ejemplo2> */}
+        {/* <MiComponenteConContexto></MiComponenteConContexto> */}
+        <Ejemplo4 nombre="Martin">
+          {/* Todo de aqui es tratado como props.children */}
+          <h3>
+            Contenido de props.children
+          </h3>
+        </Ejemplo4>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }
